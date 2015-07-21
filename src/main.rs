@@ -16,8 +16,7 @@ fn main() {
 	let listener = TcpListener::bind(("127.0.0.1", port)).unwrap();
 
 	// Broadcast quotes
-    for connection in listener.incoming() {
-		let _ = connection
-			.and_then(|mut stream| stream.write(&quote[..]));
+	for connection in listener.incoming() {
+		let _ = connection.and_then(|mut stream| stream.write(&quote[..]));
 	}
 }
