@@ -10,7 +10,7 @@ fn main() {
 	let _ = stdin().read_to_end(&mut quote).unwrap();
 
 	// Use port passed as argument, or 17
-	let port = args().nth(2).map_or(17, |x| x.parse().unwrap());
+	let port = args().nth(1).map_or(17, |x| x.parse().unwrap());
 
 	// Attempt to bind address
 	let listener = TcpListener::bind(("127.0.0.1", port)).unwrap();
